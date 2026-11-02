@@ -57,7 +57,7 @@ thanks/                  Where app.pubinator.com redirects after a form is sent 
 
 The form in section 11 posts to `https://app.pubinator.com/forms/demo` (a plain form POST, no JavaScript needed). The app stores the request, alerts super admins and sales, and redirects to `/thanks/?intent=…`.
 
-Fields sent: `intent` (demo | founding), `name`, `email`, `publication`, `role`, `type`, `team_size`, `tools[]` (indesign | canva | gdocs | wordpress | issuu | yumpu | other), `message`, `source`, `utm_source`, `utm_medium`, `utm_campaign`, and the `website` honeypot, which must stay empty and hidden. Option values must match the app's whitelist; change both together.
+Fields sent: `intent` (demo | founding), `name`, `email`, `publication`, `role`, `type`, `team_size`, `tools[]` (indesign | canva | gdocs | wordpress | issuu | yumpu | other), `message`, `source`, `utm_source`, `utm_medium`, `utm_campaign`, and the `hp_check` honeypot, which must stay empty and hidden. Don't name it after anything autofill recognises (website, url, company, name, email, phone, address), or password managers fill it and real requests get discarded. Option values must match the app's whitelist; change both together.
 
 ## Before launch
 
