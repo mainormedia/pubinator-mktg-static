@@ -554,9 +554,12 @@
 </ul>
 <p class="perk-note">Founding spots are limited so we can work closely with each title. [Number of spots]</p>
 </div>
-<form class="form reveal" id="demo" action="https://example.com/forms/pubinator-demo" method="post">
+<form class="form reveal" id="demo" action="https://app.pubinator.com/forms/demo" method="post">
 <h3>Book a demo or apply</h3>
 <p class="sub">We'll reply by email to set a time.</p>
+<input type="hidden" name="source" value="pubinator.com">
+<input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
+<div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
 <fieldset class="seg">
 <legend>I'd like to</legend>
 <div class="opts">
@@ -577,6 +580,7 @@
 <div class="checks">
 <label><input type="checkbox" name="tools[]" value="indesign">InDesign</label>
 <label><input type="checkbox" name="tools[]" value="canva">Canva</label>
+<label><input type="checkbox" name="tools[]" value="gdocs">Google Docs / Word</label>
 <label><input type="checkbox" name="tools[]" value="wordpress">WordPress</label>
 <label><input type="checkbox" name="tools[]" value="issuu">Issuu</label>
 <label><input type="checkbox" name="tools[]" value="yumpu">Yumpu</label>

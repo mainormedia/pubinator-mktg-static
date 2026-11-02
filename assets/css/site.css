@@ -379,6 +379,7 @@ img{max-width:100%}
 .seg label:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .form .btn{width:100%}
 .form .fine{margin:0;font-size:13px}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 
 /* ---------- 11 FAQ + footer ---------- */
 .faq{border-top:2px solid var(--ink)}

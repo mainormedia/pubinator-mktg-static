@@ -1,7 +1,7 @@
 # pubinator.com
 
 Marketing site for Pubinator, publishing project management for independent media.
-One static page: plain HTML and CSS, about 25 lines of optional JavaScript, no build step.
+One static page: plain HTML and CSS, about 45 lines of optional JavaScript, no build step.
 
 ## Run it
 
@@ -17,10 +17,12 @@ python3 -m http.server 8000
 ```
 index.html               The whole page: header, sections 01–12, footer
 assets/css/site.css      All styles (mobile-first, container queries)
-assets/js/site.js        Closes the mobile menu after a tap; the page works without it
+assets/js/site.js        Closes the mobile menu, passes UTM tags to the form, tailors the thanks page;
+                         every page works without it
 assets/img/              Pubinator logo and icon (SVG)
 favicon.svg
 privacy/ terms/          Placeholder pages for the footer links
+thanks/                  Where app.pubinator.com redirects after a form is sent (?intent=demo|founding)
 ```
 
 ## Page sections
@@ -51,9 +53,14 @@ privacy/ terms/          Placeholder pages for the footer links
 - Breakpoints are container queries on `.pb` at 560, 720, 880, 960, 1040, 1080 and 1160px.
 - Motion runs only under `prefers-reduced-motion: no-preference`. Scroll reveals use `animation-timeline: view()` where supported and are skipped elsewhere.
 
+## Demo form
+
+The form in section 11 posts to `https://app.pubinator.com/forms/demo` (a plain form POST, no JavaScript needed). The app stores the request, alerts super admins and sales, and redirects to `/thanks/?intent=…`.
+
+Fields sent: `intent` (demo | founding), `name`, `email`, `publication`, `role`, `type`, `team_size`, `tools[]` (indesign | canva | gdocs | wordpress | issuu | yumpu | other), `message`, `source`, `utm_source`, `utm_medium`, `utm_campaign`, and the `website` honeypot, which must stay empty and hidden. Option values must match the app's whitelist; change both together.
+
 ## Before launch
 
-- [ ] Form: replace the placeholder `action="https://example.com/forms/pubinator-demo"` in `index.html` with the real endpoint. Fields sent: `intent` (demo | founding), `name`, `email`, `publication`, `role`, `type`, `team_size`, `tools[]`, `message`.
 - [ ] Fill the bracketed placeholders: `[Confirm terms]` (founding rate), `[Number of spots]`, `[hello@pubinator.com]`.
 - [ ] Check these product claims: contributors upload without an account; AI copyedit is shown as available now; Archive includes help importing past PDFs; the Live/Coming labels in sections 03 and 08.
 - [ ] Write the Privacy and Terms pages.
